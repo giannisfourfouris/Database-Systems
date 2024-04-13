@@ -13,4 +13,4 @@
 - [gap-text2sql](https://github.com/C4AI/gap-text2sql/tree/main): Code for the _two papers above_
 - [Text-to-SQL Empowered by Large Language Models: A Benchmark Evaluation](https://arxiv.org/pdf/2308.15363.pdf): The _DAIL-SQL paper_
 - [DAIL-SQL Code Repo](https://github.com/BeachWang/DAIL-SQL)
-
+- [SQL Generation from Natural Language: A Sequence-to Sequence Model Powered by the Transformers Architecture and Association Rules](https://thescipub.com/pdf/jcssp.2021.480.489.pdf)
