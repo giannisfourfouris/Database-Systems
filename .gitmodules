@@ -1,0 +1,3 @@
+[submodule "gap-text2sql"]
+	path = gap-text2sql
+	url = git@github.com:panoskorovesis/gap-text2sql.git
