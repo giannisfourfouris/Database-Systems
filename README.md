@@ -15,3 +15,6 @@
 - [DAIL-SQL Code Repo](https://github.com/BeachWang/DAIL-SQL)
 - [SQL Generation from Natural Language: A Sequence-to Sequence Model Powered by the Transformers Architecture and Association Rules](https://thescipub.com/pdf/jcssp.2021.480.489.pdf)
 - [Open-NMT: A seq2seq translation model](https://opennmt.net/)
+
+## Notes about the code
+- [saver.py:save_checkpoint](seq2struct/utils/saver.py): The main parameter in this method is the `keep_every_n`. Using this parameters, checkpoints with last_step >= keep_every_n are removed. For example if the save_method is called every 100 steps and the keep_every_n is set to 1000 the 10 latest checkpoints will be kept at all times.
