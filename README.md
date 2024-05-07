@@ -21,3 +21,11 @@
 - [train.py](gap-text2sql/mrat-sql-gap/seq2struct/commands/train.py)
     - For the whole training process, the parameter that desides how many times the batches will be given to the model is the `max_steps`
         - For the `mT5` models this parameter is set to 51000 by default.
+- [infer.py](gap-text2sql/mrat-sql-gap/seq2struct/commands/infer.py)
+    - This is the first step of the eval process.
+    - The output of the infer is written into two separate files. For example for mT5-base:
+        - ie_dirs/mT5-base-en-train/mT5-base-en-train_en-eval_1_true_1-step2.infer: The full output is contained here, along with the original question
+        - ie_dirs/mT5-base-en-train/mT5-base-en-train_en-eval_1_true_1-step2.txt: Only the re-constructed sql is saved here. These queries will be compared with gold.txt line by line.
+        - ie_dirs/mT5-base-en-train/mT5-base-en-train_en-eval_1_true_1-step2.json: Here pais of Question - Constructed SQL are saved.
+- [eval.py](gap-text2sql/mrat-sql-gap/seq2struct/commands/eval.py)
+    - Here, metrics for the infer step are calculated and saved into appropriate files.
