@@ -16,6 +16,30 @@
 - [SQL Generation from Natural Language: A Sequence-to Sequence Model Powered by the Transformers Architecture and Association Rules](https://thescipub.com/pdf/jcssp.2021.480.489.pdf)
 - [Open-NMT: A seq2seq translation model](https://opennmt.net/)
 
+## Selecting the best LLM for Question Translation
+
+We experimented with 3 different LLMs:
+1. GPT-3.5 Turbo
+2. Meltemi
+3. LLama3
+
+In order to determine the best for our task we performed the following experiment:
+1. 3 different schemas were translated by hand
+2. 260 questions were translated by the models, *using the translated schemas for added context*
+3. We picked separately the best model(s) for each question
+4. We cross validated our picks
+5. We gathered statistics and selected the best one.
+
+### Observations
+
+#### Llama3
+
+- This model whould ofter provider correct translation but use "Τι" at the start instead of "Ποιός", "Ποιά" etc, thus forcing us to reject the translation
+
+#### Meltemi
+
+- In some cases Meltemi gave the correct translation of the requested question, but allong with other un-asked questions in the target language or other irrelevant information, thus forcing us to reject the translation
+
 ## Notes about the code
 - [saver.py:save_checkpoint](gap-text2sql/mrat-sql-gap/seq2struct/utils/saver.py): The main parameter in this method is the `keep_every_n`. Using this parameters, checkpoints with last_step >= keep_every_n are removed. For example if the save_method is called every 100 steps and the keep_every_n is set to 1000 the 10 latest checkpoints will be kept at all times.
 - [train.py](gap-text2sql/mrat-sql-gap/seq2struct/commands/train.py)
