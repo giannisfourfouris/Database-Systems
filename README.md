@@ -36,6 +36,8 @@ In order to determine the best for our task we performed the following experimen
 
 - This model whould ofter provider correct translation but use "Τι" at the start instead of "Ποιός", "Ποιά" etc, thus forcing us to reject the translation
 
+- Somethimes the greek translation contains non - greek characters (i.e. Πόσο επιταχύνει το όχημα πουสรήθηκε από AMC Hornet Sportabout ?). This translation is again, invalid.
+
 #### Meltemi
 
 - In some cases Meltemi gave the correct translation of the requested question, but allong with other un-asked questions in the target language or other irrelevant information, thus forcing us to reject the translation
