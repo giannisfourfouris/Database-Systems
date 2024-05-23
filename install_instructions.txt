@@ -29,6 +29,12 @@ conda install jupyter notebook
 conda install -c conda-forge jupyter_contrib_nbextensions
 pip3 install chardet
 
+#############################################
+#############################################
+# ADD THESE TO SETUP.SH #
+#############################################
+#############################################
+
 gdown https://drive.google.com/uc?id=1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
 gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
 
