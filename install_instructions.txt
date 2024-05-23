@@ -1,0 +1,57 @@
+git clone git@github.com:giannisfourfouris/Database-Systems.git
+
+cd Database-Systems/
+
+git submodule update --init --recursive
+
+cd gap-text2sql/mrat-sql-gap/
+
+#########################################
+########################################
+#Follow these steps to install miniconda (small version of anaconda)
+# ONLY IF NEEDED
+
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+#########################################
+#########################################
+
+conda create --name mtext2sql python=3.7
+conda activate mtext2sql
+conda install pytorch=1.5 cudatoolkit=10.2 -c pytorch
+pip install gdown
+conda install -c conda-forge jsonnet
+pip install -r requirements.txt
+python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
+conda install jupyter notebook
+conda install -c conda-forge jupyter_contrib_nbextensions
+pip3 install chardet
+
+gdown https://drive.google.com/uc?id=1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
+gdown --id 1_AckYkinAnhqmRQtGsQgUKAnTHxxX5J0
+
+# TODO: 
+#gdown TO DOWNLOAD SMALL ENG SPIDER
+# unzip SMALL ENG SPIDER
+
+mv dev.json data/spider-en/
+mv tables.json data/spider-en/
+mv train_others.json data/spider-en/
+mv train_spider.json data/spider-en/
+
+#gdown TO DOWNLOAD SMALL GR SPIDER
+# unzip SMALL GR SPIDER
+
+mv dev.json data/spider-gr/
+mv tables.json data/spider-gr/
+mv train_others.json data/spider-gr/
+mv train_spider.json data/spider-gr/
+
+
+# PREPROCESS (SMALL) ENG SPIDER 
+python run.py preprocess experiments/spider-configs/spider-mT5-base-en-train_en_eval.jsonnet
+
+# TRAIN (SMALL) ENG SPIDER 
+python run.py train experiments/spider-configs/spider-mT5-base-en-train_en_eval.jsonnet
