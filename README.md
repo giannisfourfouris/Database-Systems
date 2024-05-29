@@ -55,3 +55,21 @@ In order to determine the best for our task we performed the following experimen
         - ie_dirs/mT5-base-en-train/mT5-base-en-train_en-eval_1_true_1-step2.json: Here pais of Question - Constructed SQL are saved.
 - [eval.py](gap-text2sql/mrat-sql-gap/seq2struct/commands/eval.py)
     - Here, metrics for the infer step are calculated and saved into appropriate files.
+
+## External Files
+
+Dataset files as well as the evaluation xlsx files can be found under this [gdrive folder](https://drive.google.com/drive/folders/1Rw3nWzqD2wd20b6zflQj10TA80lpZiBP?usp=drive_link)
+
+## Schema Linking Observations:
+
+Gr - Spider
+- train.json
+    
+    - 94/857 without q_col_match
+    - 289/857 without q_tab_match
+
+Eng - Spider
+- train.json
+
+    - 12/924 without q_col_match
+    - 117/924 without q_tab_match
